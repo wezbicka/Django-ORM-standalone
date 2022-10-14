@@ -30,7 +30,11 @@ if __name__ == '__main__':
     # visits_inside = Visit.objects.filter(leaved_at=None)
     # print(visits_inside[0].passcard.owner_name)
     # find_time_in_storage()
-    visits_passcard = Visit.objects.filter(passcard=active_passcards[0])
-
-    print(visits_passcard)
+    visits_passcard = Visit.objects.filter(passcard=active_passcards[2] )
+    strange_visits = []
+    for visit in visits_passcard:
+        print("Время", visit.get_duration())
+        if visit.is_visit_long(10):
+            strange_visits.append(visit)
+    print(strange_visits)
  
