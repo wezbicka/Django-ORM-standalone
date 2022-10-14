@@ -10,11 +10,11 @@ from datacenter.models import Passcard  # noqa: E402
 if __name__ == '__main__':
     # Программируем здесь
     passcards = Passcard.objects.all()
+    active_passcards = []
     for card in passcards:
-        print("owner_name:", card.owner_name)
-        print("passcode:", card.passcode)
-        print("created_at:", card.created_at)
-        print("is_active:", card.is_active)
+        if card.is_active:
+            active_passcards.append(card)
         
-    print(passcards[99].owner_name)
+    print("Активных пропусков", len(active_passcards))
+    print(active_passcards)
     print('Количество пропусков:', Passcard.objects.count())  # noqa: T001
