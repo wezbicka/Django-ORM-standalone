@@ -13,5 +13,5 @@ if __name__ == '__main__':
     active_passcards = Passcard.objects.filter(is_active = True)
     print("Активных пропусков", len(active_passcards))
     print('Количество пропусков:', Passcard.objects.count())  # noqa: T001
-    visits = Visit.objects.all() 
-    print(visits)
+    visits_inside = Visit.objects.filter(leaved_at=None)
+    print(visits_inside)
