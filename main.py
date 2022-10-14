@@ -25,8 +25,12 @@ def find_time_in_storage():
 if __name__ == '__main__':
     # Программируем здесь
     active_passcards = Passcard.objects.filter(is_active = True)
-    print("Активных пропусков", len(active_passcards))
-    print('Количество пропусков:', Passcard.objects.count())  # noqa: T001
-    visits_inside = Visit.objects.filter(leaved_at=None)
-    print(visits_inside[0].passcard.owner_name)
-    find_time_in_storage()
+    # print("Активных пропусков", len(active_passcards))
+    # print('Количество пропусков:', Passcard.objects.count())  # noqa: T001
+    # visits_inside = Visit.objects.filter(leaved_at=None)
+    # print(visits_inside[0].passcard.owner_name)
+    # find_time_in_storage()
+    visits_passcard = Visit.objects.filter(passcard=active_passcards[0])
+
+    print(visits_passcard)
+ 
