@@ -37,4 +37,4 @@ if __name__ == '__main__':
         if visit.is_visit_long(10):
             strange_visits.append(visit)
     print(strange_visits)
- 
+    print(active_passcards[9].passcode)
