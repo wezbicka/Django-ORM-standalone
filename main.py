@@ -28,5 +28,5 @@ if __name__ == '__main__':
     print("Активных пропусков", len(active_passcards))
     print('Количество пропусков:', Passcard.objects.count())  # noqa: T001
     visits_inside = Visit.objects.filter(leaved_at=None)
-    print(visits_inside)
+    print(visits_inside[0].passcard.owner_name)
     find_time_in_storage()
